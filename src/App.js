@@ -13,8 +13,8 @@ function App() {
     <React.Fragment>
       <MyNav/>
       <Home/>
-      <Services/>
       <Portfolio/>
+      <Services/>
       <Contact/>
       <FAQ/>
       <Footer/>

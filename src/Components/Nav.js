@@ -1,26 +1,25 @@
+// NavBar.js
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Button } from "reactstrap";
+import img from "../Images/swiftwingslogo.svg";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const gradientBackgroundStyle = {
-    background: "linear-gradient(70deg,  #FCFCFC 10%, #FCFCFC 50%)",
-  };
-
   const navLinkStyle = {
     marginLeft: '15px',
     marginRight: '15px',
-    color: '#000',
-    // fontWeight: 'semi-bold',  // This makes the text bold
+    color: '#5A5A5A', // Changed to white for visibility on the background image
   };
 
   const buttonStyle = {
-    backgroundColor: '#FF7223',
-    borderColor: '#FF7223',
+    backgroundColor: '#5C0632',
+    borderColor: '#5C0632',
+    borderRadius: '50px',
+    marginLeft: '10px',
   };
 
   const centerNavStyle = {
@@ -30,41 +29,49 @@ const NavBar = () => {
   };
 
   const toggleButtonStyle = {
-    border: '1px solid #FF7223',
+    border: '1px solid #FFFFFF',
     backgroundColor: 'transparent',
   };
 
   const toggleIconStyle = {
-    backgroundColor: '#FF7223',
+    backgroundColor: '#FFFFFF',
   };
 
   return (
-    <div className="justify-center">
-      <Navbar bg="myRed" data-bs-theme="light" style={gradientBackgroundStyle} expand="lg">
-        <Container>
-          <Navbar.Brand className="fw-bold" href="#home" style={{ color: '#FF7223' }}>
-            CurateLearn
-          </Navbar.Brand>
-          <Navbar.Toggle 
-            aria-controls="basic-navbar-nav" 
-            style={toggleButtonStyle}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span className="navbar-toggler-icon" style={toggleIconStyle}></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav" in={isOpen}>
-            <Nav style={centerNavStyle}>
-              {/* <Nav.Link href="#home" style={navLinkStyle}>Home</Nav.Link> */}
-              <Nav.Link href="#services" style={navLinkStyle}>Overview</Nav.Link>
-              <Nav.Link href="#portfolio" style={navLinkStyle}>About Us</Nav.Link>
-              <Nav.Link href="#contact" style={navLinkStyle}>Blog</Nav.Link>
-              <Nav.Link href="#faq" style={navLinkStyle}>FAQ's</Nav.Link>
-            </Nav>
-            <Button color="primary" style={buttonStyle}>Join Waitlist</Button>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+    <Navbar 
+      expand="lg" 
+      className="navbar-dark" 
+      style={{
+        position: 'absolute',
+        width: '100%',
+        zIndex: 1000,
+        backgroundColor: 'transparent'
+      }}
+    >
+      <Container>
+        <Navbar.Brand href="#home" style={{ color: '#FF7223' }}>
+          <img src={img} alt="Swift Wings Logo" height="40" />
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          style={toggleButtonStyle}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className="navbar-toggler-icon" style={toggleIconStyle}></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav" in={isOpen}>
+          <Nav style={centerNavStyle}>
+            <Nav.Link href="#services" style={navLinkStyle}>Fleets</Nav.Link>
+            <Nav.Link href="#portfolio" style={navLinkStyle}>Destinations</Nav.Link>
+            <Nav.Link href="#contact" style={navLinkStyle}>Services</Nav.Link>
+            <Nav.Link href="#faq" style={navLinkStyle}>Company</Nav.Link>
+            <Nav.Link href="#faq" style={navLinkStyle}>Contact Us</Nav.Link>
+          </Nav>
+          <Nav.Link href="#signin" style={navLinkStyle}>Sign in</Nav.Link>
+          <Button className="btn-rounded-pill" style={buttonStyle}>Sign Up</Button>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

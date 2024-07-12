@@ -10,10 +10,10 @@ import {
 } from "react-bootstrap";
 import NavBar from "./Nav";
 
-import img1 from "../Images/codeide.png";
-import img2 from "../Images/aivoiceimg.png";
-import img3 from "../Images/appsimage.png";
-import img4 from "../Images/notes.png";
+import img1 from "../Images/vipicon.png";
+import img2 from "../Images/globalaccess.png";
+import img3 from "../Images/timeicon.png";
+import img4 from "../Images/addpersonicon.png";
 import img6 from "../Images/teacher.svg";
 import img5 from "../Images/curriculumpic.png";
 
@@ -25,13 +25,15 @@ const Portfolio = () => {
   }, []);
 
   const cardStyle = {
+    background: "#FDF9EF",
     transition: "all 0.3s ease-in-out",
   };
 
   const buttonStyle = {
-    background: "#FF7223",
+    background: "#FAF3DD",
     border: "none",
     transition: "background-color 0.3s ease-in-out",
+    color: "#5C0632",
   };
 
   const handleCardHover = (e, enter) => {
@@ -51,74 +53,25 @@ const Portfolio = () => {
     <React.Fragment>
       <section
         id="portfolio"
-        className="mt-4"
-        style={{ background: "#FFEADE" }}
+        className=""
+        style={{ background: "#FFFFF" }}
       >
         <Container>
+          <Row className="justify-content-center mt-3">
+            <Col lg={8}>
+              <div className="text-center pt-5 text-dark mb-5">
+                <h1
+                  className="fw-bold"
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                  color={"#5C0632"}
+                >
+                  Why Choose Swiftwings
+                </h1>
+              </div>
+            </Col>
+          </Row>
           <Row className="justify-content-center gy-4">
-            <Col xs={12}>
-              <Fade in={open}>
-                <Card
-                  className="rounded-5 card-animate mt-5"
-                  style={cardStyle}
-                  onMouseEnter={(e) => handleCardHover(e, true)}
-                  onMouseLeave={(e) => handleCardHover(e, false)}
-                >
-                  <Row className="g-0">
-                    <Col md={7}>
-                      <CardBody>
-                        <div className="p-3">
-                          <Button
-                            className="mt-2 rounded-pill"
-                            style={buttonStyle}
-                            onMouseEnter={(e) => handleButtonHover(e, true)}
-                            onMouseLeave={(e) => handleButtonHover(e, false)}
-                          >
-                            AI Mentor
-                          </Button>
-                          <h3
-                            className="card-title mt-3 fw-bold mb-2"
-                            style={{ fontFamily: "Poppins, sans-serif" }}
-                          >
-                            Practice Mock Interview
-                          </h3>
-                          <h5
-                            className="card-text mb-3 text-muted"
-                            style={{ fontFamily: "Mulish, sans-serif" }}
-                          >
-                            Refine your skills, build confidence, and prepare
-                            for real-world scenarios with our comprehensive
-                            practice mock interviews.
-                          </h5>
-                          <h3
-                            className="card-title mt-5 fw-bold mb-2"
-                            style={{ fontFamily: "Poppins, sans-serif" }}
-                          >
-                            Interact with Resources
-                          </h3>
-                          <h5
-                            className="card-text mb-1 text-muted"
-                            style={{ fontFamily: "Mulish, sans-serif" }}
-                          >
-                            Seamlessly utilize resources by tagging them with
-                            the @ feature for quick access and interaction
-                          </h5>
-                        </div>
-                      </CardBody>
-                    </Col>
-                    <Col md={4}>
-                      <img
-                        className="rounded-end img-fluid h-100 object-cover"
-                        src={img1}
-                        alt="Card"
-                      />
-                    </Col>
-                  </Row>
-                </Card>
-              </Fade>
-            </Col>
-
-            <Col md={6}>
+            <Col md={3}>
               <Fade in={open}>
                 <Card
                   className="rounded-5 card-animate h-100"
@@ -127,46 +80,38 @@ const Portfolio = () => {
                   onMouseLeave={(e) => handleCardHover(e, false)}
                 >
                   <CardBody className="d-flex flex-column">
-                    <div className="p-3">
+                    <div className="p-3 text-center">
+                      <div className="mt-auto">
+                        <img
+                          src={img1}
+                          alt=""
+                          height="55"
+                          className="mb-3 pb-2"
+                        />
+                      </div>
                       <Button
                         className="rounded-pill"
                         style={buttonStyle}
-                        onMouseEnter={(e) => handleButtonHover(e, true)}
-                        onMouseLeave={(e) => handleButtonHover(e, false)}
                       >
-                        Personalization
+                        Vip Treatment
                       </Button>
-                      <h3
-                        className="card-title mt-3 fw-bold mb-2"
+                      <p
+                        className="card-text mb-1 text-center text-muted"
                         style={{ fontFamily: "Poppins, sans-serif" }}
                       >
-                        Customise your AI Mentor
-                      </h3>
-                      <p
-                        className="card-text mb-3 text-muted"
-                        style={{ fontFamily: "Mulish, sans-serif" }}
-                      >
-                        Customize your AI mentor to tailor your learning
-                        experience specifically to your unique needs and
-                        preferences. Personalizing your mentorship enhances
-                        engagement and ensures relevance throughout your
-                        learning journey.
+                        Enjoy luxurious comfort, in-flight catering customised
+                        to your taste. Get entertained by favourite shows or
+                        stay connected with work using free Wi-Fi. Arrive
+                        refreshed & ready for your destination. Fly on a private
+                        flight schedule
                       </p>
-                    </div>
-                    <div className="mt-auto">
-                      <img
-                        className="rounded-bottom img-fluid w-100"
-                        src={img2}
-                        alt="Card"
-                        style={{ objectFit: "cover", height: "200px" }}
-                      />
                     </div>
                   </CardBody>
                 </Card>
               </Fade>
             </Col>
 
-            <Col md={6}>
+            <Col md={3}>
               <Fade in={open}>
                 <Card
                   className="rounded-5 card-animate h-100"
@@ -175,46 +120,37 @@ const Portfolio = () => {
                   onMouseLeave={(e) => handleCardHover(e, false)}
                 >
                   <CardBody className="d-flex flex-column">
-                    <div className="p-3">
+                    <div className="p-3 text-center">
+                      <div className="mt-auto">
+                        <img
+                          src={img4}
+                          alt=""
+                          height="55"
+                          className="mb-3 pb-2"
+                        />
+                      </div>
                       <Button
                         className="rounded-pill"
                         style={buttonStyle}
-                        onMouseEnter={(e) => handleButtonHover(e, true)}
-                        onMouseLeave={(e) => handleButtonHover(e, false)}
                       >
-                        Personalization
+                        Global Access
                       </Button>
-                      <h3
-                        className="card-title mt-3 fw-bold mb-2"
+
+                      <p
+                        className="card-text mt-2 mb-1 text-center text-muted"
                         style={{ fontFamily: "Poppins, sans-serif" }}
                       >
-                        Personalized Curriculum
-                      </h3>
-                      <p
-                        className="card-text mb-3 text-muted"
-                        style={{ fontFamily: "Mulish, sans-serif" }}
-                      >
-                        Customize your AI mentor to tailor your learning
-                        experience specifically to your unique needs and
-                        preferences. Personalizing your mentorship enhances
-                        engagement and ensures relevance throughout your
-                        learning journey.
+                        Swiftwings grants you exclusive access to private jets
+                        for seamless travel anywhere in the globe. Remember, we
+                        bring the world closer to you!
                       </p>
-                    </div>
-                    <div className="mt-auto">
-                      <img
-                        className="rounded-bottom img-fluid w-100"
-                        src={img5}
-                        alt="Card"
-                        style={{ objectFit: "cover", height: "200px" }}
-                      />
                     </div>
                   </CardBody>
                 </Card>
               </Fade>
             </Col>
 
-            <Col md={6}>
+            <Col md={3}>
               <Fade in={open}>
                 <Card
                   className="rounded-5 card-animate h-100"
@@ -223,45 +159,39 @@ const Portfolio = () => {
                   onMouseLeave={(e) => handleCardHover(e, false)}
                 >
                   <CardBody className="d-flex flex-column">
-                    <div className="p-3">
+                    <div className="p-3 text-center">
+                      <div className="mt-auto">
+                        <img
+                          src={img3}
+                          alt=""
+                          height="55"
+                          className="mb-3 pb-2"
+                        />
+                      </div>
                       <Button
                         className="rounded-pill"
                         style={buttonStyle}
                         onMouseEnter={(e) => handleButtonHover(e, true)}
                         onMouseLeave={(e) => handleButtonHover(e, false)}
                       >
-                        Notepad
+                        Save Time
                       </Button>
-                      <h3
-                        className="card-title mt-3 fw-bold mb-2"
+
+                      <p
+                        className="card-text mb-1 text-center text-muted"
                         style={{ fontFamily: "Poppins, sans-serif" }}
                       >
-                        Take notes while learning
-                      </h3>
-                      <p
-                        className="card-text mb-3 text-muted"
-                        style={{ fontFamily: "Mulish, sans-serif" }}
-                      >
-                        This setup lets you jot down important points, ideas,
-                        and questions within your space, eliminating the need to
-                        switch tools. Keeping everything in one place helps you
-                        maintain focus and streamline your learning.
+                        Skip the crowds & time wasters! Time is a precious
+                        commodity not to be wasted. Fly private, fast and secure
+                        with Swiftwings private jet charter services.
                       </p>
-                    </div>
-                    <div className="mt-auto">
-                      <img
-                        className="rounded-bottom img-fluid w-100"
-                        src={img4}
-                        alt="Card"
-                        style={{ objectFit: "cover", height: "200px" }}
-                      />
                     </div>
                   </CardBody>
                 </Card>
               </Fade>
             </Col>
 
-            <Col md={6}>
+            <Col md={3}>
               <Fade in={open}>
                 <Card
                   className="rounded-5 card-animate h-100"
@@ -270,92 +200,34 @@ const Portfolio = () => {
                   onMouseLeave={(e) => handleCardHover(e, false)}
                 >
                   <CardBody className="d-flex flex-column">
-                    <div className="p-3">
+                    <div className="p-3 text-center">
+                      <div className="mt-auto">
+                        <img
+                          src={img4}
+                          alt=""
+                          height="55"
+                          className="mb-3 pb-2"
+                        />
+                      </div>
                       <Button
                         className="rounded-pill"
                         style={buttonStyle}
-                        onMouseEnter={(e) => handleButtonHover(e, true)}
-                        onMouseLeave={(e) => handleButtonHover(e, false)}
                       >
-                        Notepad
+                        Membership
                       </Button>
-                      <h3
-                        className="card-title mt-3 fw-bold mb-2"
+
+                      <p
+                        className="card-text mb-1 text-center text-muted"
                         style={{ fontFamily: "Poppins, sans-serif" }}
                       >
-                        Watch or Read follow up videos or PDF by Pinning
-                        Resource
-                      </h3>
-                      <p
-                        className="card-text mb-3 text-muted"
-                        style={{ fontFamily: "Mulish, sans-serif" }}
-                      >
-                        Pinning resources lets you easily revisit important
-                        videos or PDFs, boosting your study efficiency and
-                        keeping you focused.
+                        Network with high profile individuals like you and
+                        strike a deeper connection and get access to premium
+                        services like: unlimited private jet access, highly
+                        personalised travel experience, priority scheduling,
+                        empty leg prior notification, etc
                       </p>
                     </div>
-                    <div className="mt-auto">
-                      <img
-                        className="rounded-bottom img-fluid w-100"
-                        src={img6}
-                        alt="Card"
-                        style={{ objectFit: "cover", height: "200px" }}
-                      />
-                    </div>
                   </CardBody>
-                </Card>
-              </Fade>
-            </Col>
-
-            <Col xs={12}>
-              <Fade in={open}>
-                <Card
-                  className="rounded-5 card-animate mt-5 mb-4"
-                  style={cardStyle}
-                  onMouseEnter={(e) => handleCardHover(e, true)}
-                  onMouseLeave={(e) => handleCardHover(e, false)}
-                >
-                  <Row className="g-0">
-                    <Col md={8}>
-                      <CardBody>
-                        <div className="p-3">
-                          <Button
-                            className="mt-2 rounded-pill"
-                            style={buttonStyle}
-                            onMouseEnter={(e) => handleButtonHover(e, true)}
-                            onMouseLeave={(e) => handleButtonHover(e, false)}
-                          >
-                            Integrate App
-                          </Button>
-                          <h3
-                            className="card-title mt-3 fw-bold mb-2"
-                            style={{ fontFamily: "Poppins, sans-serif" }}
-                          >
-                            Integrate Your Personal Library into Your Space
-                          </h3>
-                          <p
-                            className="card-text mb-3 text-muted"
-                            style={{ fontFamily: "Mulish, sans-serif" }}
-                          >
-                            Connect your existing library of learning resources
-                            to your Space. By centralizing all your study
-                            materials, you can easily access and reference them
-                            without interrupting your workflow. This integration
-                            streamlines your learning process, making it more
-                            efficient and organized.
-                          </p>
-                        </div>
-                      </CardBody>
-                    </Col>
-                    <Col md={4}>
-                      <img
-                        className="rounded-end img-fluid h-100 object-cover"
-                        src={img3}
-                        alt="Card"
-                      />
-                    </Col>
-                  </Row>
                 </Card>
               </Fade>
             </Col>
