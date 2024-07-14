@@ -7,8 +7,10 @@ import {
   CardBody,
   Button,
   Fade,
+  Form,
+  InputGroup,
 } from "react-bootstrap";
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
 
 import img1 from "../Images/serviceimg1.png";
 import img2 from "../Images/globalaccess.png";
@@ -19,6 +21,7 @@ import img5 from "../Images/curriculumpic.png";
 
 const Services = () => {
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     setOpen(true);
@@ -49,6 +52,14 @@ const Services = () => {
     justifyContent: "center",
   };
 
+  const subscribeCardStyle = {
+    backgroundColor: 'white',
+    borderRadius: '20px',
+    padding: '20px',
+    marginTop: '30px',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  };
+
   const handleCardHover = (e, enter) => {
     e.currentTarget.style.transform = enter
       ? "translateY(-5px)"
@@ -56,6 +67,12 @@ const Services = () => {
     e.currentTarget.style.boxShadow = enter
       ? "0 10px 20px rgba(0, 0, 0, 0.1)"
       : "none";
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Subscribed with email:', email);
+    setEmail('');
   };
 
   return (
@@ -109,6 +126,7 @@ const Services = () => {
               </Col>
             ))}
           </Row>
+          
         </Container>
       </section>
     </React.Fragment>

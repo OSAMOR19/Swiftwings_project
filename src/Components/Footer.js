@@ -2,10 +2,11 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import img from "../Images/swiftlogowhite.png";
 
 const Footer = () => {
   const footerStyle = {
-    background: "linear-gradient(90deg, #0E0D13 0%, #121212 100%)",
+    background: "#5C0632",
     color: "#ffffff",
     paddingTop: "40px",
     paddingBottom: "40px",
@@ -27,9 +28,7 @@ const Footer = () => {
     flexDirection: "column",
   };
 
-  const curateLearnStyle = {
-    color: "#FF7223",
-  };
+ 
 
   return (
     <footer style={footerStyle}>
@@ -37,26 +36,44 @@ const Footer = () => {
         <Row>
           <Col lg={4}>
             <div>
-              <h2 style={curateLearnStyle}>CurateLearn</h2>
+            <img src={img} alt=""  />
               <p style={textCenter}>© 2024. CurateLearn All rights reserved.</p>
             </div>
           </Col>
           <Col lg={8}>
             <Row>
-              <Col sm={6}>
+              <Col sm={3}>
                 <div style={linkColumnStyle}>
-                  <a href="#home" style={linkStyle}>Community</a>
-                  <a href="#portfolio" style={linkStyle}>Contact us</a>
-                  <a href="#contact" style={linkStyle}>curatelearn@aceembedded.io</a>
-                  <a href="#faq" style={linkStyle}>+234-805-123-0116</a>
+                  <a href="#home" style={linkStyle}>Services</a>
+                  <a href="#portfolio" style={linkStyle}>Luxirious trips</a>
+                  <a href="#contact" style={linkStyle}>Inflight catering</a>
+                  <a href="#faq" style={linkStyle}>Air ambulance</a>
                 </div>
               </Col>
-              <Col sm={6}>
+              <Col sm={3}>
                 <div style={linkColumnStyle}>
-                  <a href="#about" style={linkStyle}>FAQs</a>
-                  <a href="#blog" style={linkStyle}>Blog</a>
-                  <a href="#testimonials" style={linkStyle}>Privacy Policy</a>
-                  <a href="#pricing" style={linkStyle}>Terms of Use</a>
+                  <a href="#about" style={linkStyle}>Company</a>
+                  <a href="#blog" style={linkStyle}>About Us</a>
+                  <a href="#testimonials" style={linkStyle}>Contact us</a>
+                  <a href="#pricing" style={linkStyle}>Career</a>
+                  <a href="#pricing" style={linkStyle}>Outreach</a>
+                </div>
+              </Col>
+              <Col sm={3}>
+                <div style={linkColumnStyle}>
+                  <a href="#about" style={linkStyle}>Legal</a>
+                  <a href="#blog" style={linkStyle}>Privacy Policy</a>
+                  <a href="#testimonials" style={linkStyle}>Terms & Condition</a>
+                  <a href="#pricing" style={linkStyle}>Usage rights</a>
+                </div>
+              </Col>
+              <Col sm={3}>
+                <div style={linkColumnStyle}>
+                  <a href="#about" style={linkStyle}>Contact and Socials</a>
+                  <a href="#blog" style={linkStyle}>charter@swiftwingsjet.com</a>
+                  <a href="#testimonials" style={linkStyle}>swiftwingsjet</a>
+                  <a href="#pricing" style={linkStyle}>swiftwingsjet</a>
+                  <a href="#pricing" style={linkStyle}>09028792910</a>
                 </div>
               </Col>
             </Row>
