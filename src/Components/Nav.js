@@ -29,7 +29,7 @@ const NavBar = () => {
   };
 
   const toggleButtonStyle = {
-    border: '1px solid #5C0632',
+    border: '1px solid #ffffff',
     backgroundColor: 'transparent',
   };
 
