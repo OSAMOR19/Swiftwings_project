@@ -1,185 +1,117 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  Col,
   Container,
-  Row,
   Card,
-  TabPane,
-  Nav,
+  Col,
+  Row,
   CardBody,
-  TabContent,
-} from "reactstrap";
-import avatar1 from "../Images/selflearn1.svg";
-import avatar2 from "../Images/selflearn2.svg";
-import avatar3 from "../Images/selflearn3.svg";
-import avatar4 from "../Images/selflearn4.svg";
-import avatar5 from "../Images/selflearn.svg";
-import { NavItem, NavLink } from "react-bootstrap";
-import classnames from "classnames";
+  Button,
+  Fade,
+} from "react-bootstrap";
+import { FaArrowRight } from 'react-icons/fa';
+
+import img1 from "../Images/serviceimg1.png";
+import img2 from "../Images/globalaccess.png";
+import img3 from "../Images/serviceimg3.png";
+import img4 from "../Images/serviceimg2.png";
+import img6 from "../Images/teacher.svg";
+import img5 from "../Images/curriculumpic.png";
 
 const Services = () => {
-  const [animationNavTab, setAnimationNavTab] = useState("1");
-  const animationNavToggle = (tab) => {
-    if (animationNavTab !== tab) {
-      setAnimationNavTab(tab);
-    }
-  };
+  const [open, setOpen] = useState(false);
 
-  const tabItems = [
-    "Personalised learning space",
-    "AI Currated Resources",
-    "Customised Curriculum",
-    "AI Mentor",
-    "Integrated IDE",
-  ];
+  useEffect(() => {
+    setOpen(true);
+  }, []);
 
   const cardStyle = {
-    background:
-      "radial-gradient(circle at center, rgba(29, 179, 251, 0.1) 0%, rgba(153, 129, 232, 0.1) 50%, rgba(195, 65, 197, 0.1) 100%)",
-    borderRadius: "25px",
-    overflow: "hidden",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    background: "rgba(85, 85, 85, 0.65)",
+    transition: "all 0.3s ease-in-out",
+    borderRadius: "20px", // More rounded corners
   };
 
-  const cardHeaderStyle = {
-    background:
-      "linear-gradient(180deg, #FFFFFF 40%, rgba(252, 252, 252, 0) 100%)",
-    padding: "20px",
-    paddingBottom: "40px",
+  const imageStyle = {
+    width: '100%',
+    height: '200px',
+    objectFit: 'cover',
+    borderTopLeftRadius: '20px',
+    borderTopRightRadius: '20px',
+  };
+
+  const buttonStyle = {
+    backgroundColor: "#5C0632",
+    border: "none",
+    borderRadius: "20px",
+    padding: "10px 20px",
+    marginTop: "15px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+  const handleCardHover = (e, enter) => {
+    e.currentTarget.style.transform = enter
+      ? "translateY(-5px)"
+      : "translateY(0)";
+    e.currentTarget.style.boxShadow = enter
+      ? "0 10px 20px rgba(0, 0, 0, 0.1)"
+      : "none";
   };
 
   return (
-    <Fragment>
-      <section id="services" style={{ background: "#FFFFFF" }}>
+    <React.Fragment>
+      <section id="portfolio" className="" style={{ background: "#FFFFF" }}>
         <Container>
-          <Row>
-            <Col className="col-12 mb-5">
-              <div className="justify-content-between d-flex align-items-center mt-3 mb-4"></div>
-              <Row className="justify-content-center mt-3">
-                <Col lg={8}>
-                  <div className="text-center pt-5 text-dark mb-5">
-                    <h1 className="fw-bold"
-                    style={{ fontFamily: "Poppins, sans-serif" }}>A Platform for Self-Learners</h1>
-                    <p
-                      className="lead text-break text-muted custom-lead"
-                      style={{ fontFamily: "Mulish, sans-serif" }}
-                    >
-                      Empower Your Self-Learning Journey with a Wealth of
-                      Resources and Personalized Tools. Making Self-Learning
-                      Easy.
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-
-              <Row className="justify-content-center">
-                <Col xxl={11}>
-                  <div className="nav-container">
-                    <Nav
-                      pills
-                      className="nav nav-pills animation-nav nav-justified mb-3 flex-nowrap overflow-auto"
-                    >
-                      {tabItems.map((text, index) => (
-                        <NavItem
-                          className="nav-item flex-shrink-0 mx-1"
-                          key={index}
-                        >
-                          <NavLink
-                            className={classnames({
-                              active:
-                                animationNavTab === (index + 1).toString(),
-                              "nav-link": true,
-                            })}
-                            onClick={() => {
-                              animationNavToggle((index + 1).toString());
-                            }}
-                            style={{
-                              cursor: "pointer",
-                              borderRadius: "50px",
-                              backgroundColor:
-                                animationNavTab === (index + 1).toString()
-                                  ? "#FF7223"
-                                  : "transparent",
-                              color:
-                                animationNavTab === (index + 1).toString()
-                                  ? "white"
-                                  : "#333333",
-                              padding: "10px 20px",
-                              transition: "all 0.3s ease",
-                              border:
-                                animationNavTab === (index + 1).toString()
-                                  ? "none"
-                                  : "1px solid #eeeeee", // Changed the border color to a muted light gray
-                              whiteSpace: "nowrap",
-                            }}
-                          >
-                            {text}
-                          </NavLink>
-                        </NavItem>
-                      ))}
-                    </Nav>
-                  </div>
-
-                  <TabContent
-                    activeTab={animationNavTab}
-                    className="text-muted"
-                  >
-                    {tabItems.map((item, index) => (
-                      <TabPane
-                        tabId={(index + 1).toString()}
-                        id={`animation-${item
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`}
-                        key={index}
-                      >
-                        <Col className="col-xxl col-12">
-                          <Card className="h-100" style={cardStyle}>
-                            <div style={cardHeaderStyle}>
-                              <CardBody>
-                                <h4 className="card-title w- mb-0">
-                                  {`0${index + 1} ${item}`}
-                                </h4>
-                              </CardBody>
-                            </div>
-                            <div className="p-4">
-                              <img
-                                className="img-fluid rounded-3"
-                                src={
-                                  [avatar1, avatar2, avatar3, avatar4, avatar5][
-                                    index
-                                  ]
-                                }
-                                alt="Card cap"
-                              />
-                            </div>
-                          </Card>
-                        </Col>
-                      </TabPane>
-                    ))}
-                  </TabContent>
-                </Col>
-              </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={8}>
+              <div className="text-center pt-5 text-dark mb-5">
+                <p>Our Services</p>
+                <h1
+                  className="fw-bold"
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                >
+                  We offer world a class exotic experience
+                </h1>
+              </div>
             </Col>
+          </Row>
+          <Row className="justify-content-center gy-4">
+            {[
+              { img: img1, title: "Group/Corporate Charter", description: "Fly together, work together! We provide Seamless travel for your team. Make your dream come true with Swiftwings private jet charters for groups, companies and corporations" },
+              { img: img4, title: "Medical Evacuation", description: "Swiftwings provides swift and secure medical evacuation services. Our private jets are fully equipped for critical care, with experienced medical personnel on board to ensure you receive the best possible care during transport." },
+              { img: img3, title: "Air Helicopters", description: "In line with bringing the world closer to you, Swiftwings takes private flight to new heights with our on-demand helicopter charters. Access remote locations, avoid traffic, and land closer to your final destination." }
+            ].map((service, index) => (
+              <Col md={4} key={index} className="d-flex flex-column align-items-center">
+                <Fade in={open}>
+                  <Card
+                    className="card-animate h-100 w-100"
+                    style={cardStyle}
+                    onMouseEnter={(e) => handleCardHover(e, true)}
+                    onMouseLeave={(e) => handleCardHover(e, false)}
+                  >
+                    <img src={service.img} alt="" style={imageStyle} />
+                    <CardBody className="d-flex flex-column">
+                      <div className="p-3 text-start">
+                        <h3 className="text-white">{service.title}</h3>
+                        <p
+                          className="card-text mb-1 text-start text-light"
+                          style={{ fontFamily: "Poppins, sans-serif" }}
+                        >
+                          {service.description}
+                        </p>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Fade>
+                <Button className="mb-5" style={buttonStyle}>
+                  See More <FaArrowRight style={{ marginLeft: '10px' }} />
+                </Button>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .nav-container {
-            overflow-x: auto;
-          }
-          .nav-pills {
-            flex-wrap: nowrap !important;
-          }
-          .nav-item {
-            margin-right: 10px;
-          }
-          .nav-item:last-child {
-            margin-right: 0;
-          }
-        }
-      `}</style>
-    </Fragment>
+    </React.Fragment>
   );
 };
 

@@ -63,7 +63,6 @@ const Portfolio = () => {
                 <h1
                   className="fw-bold"
                   style={{ fontFamily: "Poppins, sans-serif" }}
-                  color={"#5C0632"}
                 >
                   Why Choose Swiftwings
                 </h1>

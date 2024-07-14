@@ -1,101 +1,42 @@
-import React, { useState, Fragment } from "react";
-import {
-  Col,
-  Container,
-  Row,
-  Form,
-  Alert,
-} from "reactstrap";
+import React, { Fragment } from "react";
+import { Container, Row, Button } from "reactstrap";
 
 const Contact = () => {
-  const [animationNavTab, setAnimationNavTab] = useState("1");
-  const animationNavToggle = (tab) => {
-    if (animationNavTab !== tab) {
-      setAnimationNavTab(tab);
-    }
-  };
-
   return (
     <Fragment>
-      <section className="section" id="contact">
-        <Container className="mt-5 mb-5">
-          <Row className="gy-4">
-            <Col lg={5}>
-              <div>
-                <div className="">
-                  <h2
-                    className="fs-13 mt-4 mb-0 fw-semi-bold"
-                    style={{ fontFamily: "Poppins, sans-serif" }}
-                  >
-                    Join other self-learners to stay informed and be the first
-                    to experience CurateLearn.
-                  </h2>
-                </div>
-              </div>
-            </Col>
-
-            <Col lg={7}>
-              <div>
-                <Form>
-                  <Row>
-                    <Col lg={12}>
-                      <div className="mb-4 custom-input-container">
-                        <label htmlFor="name" className="form-label fs-13">
-                          Name
-                        </label>
-                        <input
-                          name="name"
-                          id="name"
-                          type="text"
-                          className="form-control bg-light border-light custom-input"
-                          placeholder="Enter name*"
-                        />
-                      </div>
-                    </Col>
-                    <Col lg={12}>
-                      <div className="mb-4 custom-input-container">
-                        <label htmlFor="email" className="form-label fs-13">
-                          Email
-                        </label>
-                        <input
-                          name="email"
-                          id="email"
-                          type="email"
-                          className="form-control bg-light border-light custom-input"
-                          placeholder="Enter email*"
-                        />
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} className="text-end rounded-pill custom-input-container">
-                      <input
-                        type="submit"
-                        id="submit"
-                        name="send"
-                        className="submitBnt btn btn-primary custom-input"
-                        value="Join waitlist"
-                        style={{ background: "#FF7223", border: "none" }}
-                      />
-                    </Col>
-                  </Row>
-                </Form>
-                
-              </div>
-            </Col>
+      <section className="section py-5" id="contact" style={{ backgroundColor: "#5C0632" }}>
+        <Container className="">
+          <Row className="justify-content-center">
+            <div className="text-center" style={{ maxWidth: "800px" }}>
+              <h2
+                className="fs-2 text-white mt-4 mb-3 fw-bold"
+                style={{ fontFamily: "Poppins, sans-serif" }}
+              >
+                Let's work together
+              </h2>
+              <p className="text-white mb-5">
+                Swift Wings Ltd offers an exclusive Jet Card Membership,
+                providing discerning travelers with unparalleled access to
+                private jet charter services. As a Jet Card member, you enjoy
+                priority booking and seamless travel experiences tailored to
+                your preferences.
+              </p>
+              <Button 
+                color="light" 
+                className="px-4 py-2 rounded-pill"
+                style={{ 
+                  backgroundColor: "rgba(255, 255, 255, 0.2)", 
+                  border: "none",
+                  color: "white",
+                  fontWeight: "bold"
+                }}
+              >
+                Contact Us
+              </Button>
+            </div>
           </Row>
         </Container>
       </section>
-      <style jsx>{`
-        .custom-input-container {
-          max-width: 400px; /* Adjust this value as needed */
-          margin: 0 auto;
-        }
-
-        .custom-input {
-          max-width: 100%;
-        }
-      `}</style>
     </Fragment>
   );
 };
