@@ -29,12 +29,12 @@ const NavBar = () => {
   };
 
   const toggleButtonStyle = {
-    border: '1px solid #FFFFFF',
+    border: '1px solid #5C0632',
     backgroundColor: 'transparent',
   };
 
   const toggleIconStyle = {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'transparent',
   };
 
   return (
